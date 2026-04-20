@@ -8,9 +8,8 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from app.agent.controller import TaskController, TaskRejectedError
-from app.db.models import TaskRecord
-from app.db.schemas import TaskCreate, TaskResponse
 from app.db.session import get_db
+from app.db.tasks import TaskCreate, TaskRecord, TaskResponse
 
 
 router = APIRouter()

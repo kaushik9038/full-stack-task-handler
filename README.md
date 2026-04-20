@@ -22,8 +22,7 @@ fullstack-agent-challenge/
         tool_definitions.py
       db/
         __init__.py
-        models.py
-        schemas.py
+        tasks.py
         session.py
       tools/
         __init__.py

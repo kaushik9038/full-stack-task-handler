@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from app.db.schemas import ExecutionStep
+from app.db.tasks import ExecutionStep
 
 
 class AuditLogger:

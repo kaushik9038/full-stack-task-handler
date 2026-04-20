@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import router
 from app.db.session import Base, engine
-import app.db.models
+import app.db.tasks
 
 Base.metadata.create_all(bind=engine)
 
