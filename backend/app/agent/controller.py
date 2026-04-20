@@ -26,7 +26,6 @@ class TaskRejectedError(ValueError):
 
 @dataclass
 class IntentAnalysis:
-    candidates: list[ToolScore]
     matched_intents: list[str]
     compound_detected: bool
     top_candidate: ToolScore
@@ -53,9 +52,6 @@ class ToolRegistry:
 
     def all(self) -> list[ToolDefinition]:
         return list(self._tools.values())
-
-    def names(self) -> list[str]:
-        return list(self._tools.keys())
 
 
 class TaskController:
@@ -151,7 +147,6 @@ class TaskController:
         )
 
         return IntentAnalysis(
-            candidates=sorted_scores,
             matched_intents=matched_intents,
             compound_detected=compound_detected,
             top_candidate=sorted_scores[0],
@@ -195,7 +190,7 @@ class TaskController:
             determination="No intent passed the minimum confidence threshold",
         )
         raise ValueError("Intent cannot be validated with the current level of confidence. Please clarify the task.")
-#detecting multi intent
+
     def _multi_intents(self, tool_scores: list[ToolScore]) -> bool:
         return sum(1 for tool_score in tool_scores if tool_score.intent_detected) >= self.MULTI_INTENT_THRESHOLD
 
