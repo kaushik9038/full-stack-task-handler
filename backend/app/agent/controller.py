@@ -1,4 +1,3 @@
-"""Task routing and execution."""
 
 import re
 from dataclasses import dataclass
@@ -145,7 +144,7 @@ class TaskController:
         audit_logger.record_step(
             "analyze_intent",
             "Analyzed task intent candidates",
-            candidates=[self._serialize_tool_score(tool_score) for tool_score in sorted_scores],
+            candidates=[self._tool_dict(tool_score) for tool_score in sorted_scores],
             matched_intents=matched_intents,
             compound_detected=compound_detected,
             confidence_threshold=self.CONFIDENCE_THRESHOLD,
@@ -196,11 +195,11 @@ class TaskController:
             determination="No intent passed the minimum confidence threshold",
         )
         raise ValueError("Intent cannot be validated with the current level of confidence. Please clarify the task.")
-
+#detecting multi intent
     def _multi_intents(self, tool_scores: list[ToolScore]) -> bool:
         return sum(1 for tool_score in tool_scores if tool_score.intent_detected) >= self.MULTI_INTENT_THRESHOLD
 
-    def _serialize_tool_score(self, tool_score: ToolScore) -> dict[str, Any]:
+    def _tool_dict(self, tool_score: ToolScore) -> dict[str, Any]:
         return {
             "tool": tool_score.tool,
             "confidence": tool_score.confidence,

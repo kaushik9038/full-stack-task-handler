@@ -1,4 +1,4 @@
-"""Shared types for pluggable task tools."""
+
 
 from collections.abc import Callable
 from dataclasses import dataclass

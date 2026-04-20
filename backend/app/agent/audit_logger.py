@@ -1,4 +1,4 @@
-"""Audit logger for execution steps."""
+"""logs execution steps"""
 
 from typing import Any
 

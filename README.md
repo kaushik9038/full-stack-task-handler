@@ -82,7 +82,7 @@ The routing is rule-based and lightweight.
 
 - Tools are listed in the controller through a small registry class.
 - Each tool carries its own scoring logic, so the controller can ask every tool for intent evidence without embedding tool-specific matching rules in one place.
-- The controller flow is: validate task -> analyze intent -> resolve route -> execute or reject.
+- The controller flow is: validate task > analyze intent > resolve route > execute or reject.
 - Tool scores are used as routing evidence, not as the routing policy by themselves.
 - If the request contains multiple supported intents, the controller rejects it and asks the user to split it into separate requests.
 - If no tool reaches the confidence threshold, the controller rejects the task and asks the user to clarify it.
@@ -93,38 +93,7 @@ Right now there are 3 tools:
 - `calculator`
 - `text_processor`
 
-## Controller Flow
 
-The backend controller now works in explicit phases:
-
-1. Validate the incoming task text.
-2. Analyze candidate intents from all registered tools.
-3. Resolve the route as one of:
-   - single supported intent
-   - multi intent rejection
-   - unresolved intent rejection
-4. Execute the selected tool when a supported single intent is found.
-5. Persist the final outcome and execution trace.
-
-This keeps intent analysis separate from execution and makes failed or rejected requests visible in the UI history.
-
-## Example Tasks
-
-- `uppercase hello world`
-- `lowercase THIS SHOULD BE QUIET`
-- `word count this sentence has five words`
-- `calculate 5 * 8`
-- `what is the weather in Edmonton`
-- `calculate 2 + 2 and weather in Edmonton`
-- `weather in Edmonton and calculate 2 + 2`
-
-## Notes
-
-- SQLite lives locally in `backend/tasks.db`
-- Execution steps are stored as JSON text, mostly to keep the schema simple
-- Adding a new tool means defining its handler and scoring logic, then adding it to the registry list in the controller
-- Rejected tasks are also persisted, so the history view includes failed validation, unresolved intent, and multi intent requests
-- The UI is simple by design and includes task entry, history, final output, and full execution trace
 
 ## Current Limitations
 
