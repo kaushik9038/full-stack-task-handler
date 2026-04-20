@@ -134,4 +134,4 @@ Rejected after tool selection: Division by zero is not supported.
 
 
 ##Walkthrough Video Link
-- [https://uofc-my.sharepoint.com/:v:/g/personal/kaushik_mazumder_ucalgary_ca/IQDC-BQ5hQCCR6YqN2WoDD2ZAT-0sBaFp_oPDjjZUFQgZi8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=cmgu9q](https://uofc-my.sharepoint.com/:v:/g/personal/kaushik_mazumder_ucalgary_ca/IQDC-BQ5hQCCR6YqN2WoDD2ZAT-0sBaFp_oPDjjZUFQgZi8)
+- https://uofc-my.sharepoint.com/:v:/g/personal/kaushik_mazumder_ucalgary_ca/IQAEzO4Kd51GTrBxmUt4Mk_JAQF72pV4EWN0TTGhKT021rk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=V9KERD
