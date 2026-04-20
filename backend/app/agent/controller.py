@@ -24,7 +24,7 @@ class TaskRejectedError(ValueError):
         self.tools_used = tools_used or []
 
 
-@dataclass(frozen=True)
+@dataclass
 class IntentAnalysis:
     candidates: list[ToolScore]
     matched_intents: list[str]
@@ -32,7 +32,7 @@ class IntentAnalysis:
     top_candidate: ToolScore
 
 
-@dataclass(frozen=True)
+@dataclass
 class RouteDecision:
     selected_tool: str
     confidence: float

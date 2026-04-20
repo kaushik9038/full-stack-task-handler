@@ -9,7 +9,7 @@ ToolHandler = Callable[[str], dict[str, Any]]
 ToolScorer = Callable[[str, str], "ToolScore"]
 
 
-@dataclass(frozen=True)
+@dataclass
 class ToolScore:
     tool: str
     confidence: float
@@ -18,7 +18,7 @@ class ToolScore:
     intent_detected: bool
 
 
-@dataclass(frozen=True)
+@dataclass
 class ToolDefinition:
     name: str
     handler: ToolHandler
