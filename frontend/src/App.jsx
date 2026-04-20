@@ -89,7 +89,7 @@ export default function App() {
     <main className="app-shell">
       <section className="left-column">
         <header className="page-header">
-          <h1>Agent Task Runner</h1>
+          <h1>Agent Task Flow</h1>
           <p>A small FastAPI + React demo with simple tool routing and trace history.</p>
         </header>
         <TaskForm
